@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+    mineviet_discord_bot:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: mineviet-discord-bot
+        container_name: MinevietDiscordBot
+        restart: unless-stopped
+        env_file: .env
+        volumes:
+        - .:/app
+        command: 'node .'
